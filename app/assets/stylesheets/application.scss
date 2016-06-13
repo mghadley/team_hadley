@@ -1,0 +1,6 @@
+@import "materialize/components/color";
+$primary-color: color("grey", "darken-1") !default;
+@import 'materialize';
+@import 'static_pages';
+@import 'app';
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
