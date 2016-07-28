@@ -1,3 +1,23 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.post-title {
+	height: 15vw;
+	width: 15vw;
+	margin: 10px;
+}
+
+.preview {
+	max-height: 200px;
+	overflow: hidden;
+  text-overflow: ellipsis;
+	content: "";
+	position: relative;
+}
+
+.preview:before {
+	content:'';
+  width:100%;
+  height:100%;    
+  position:absolute;
+  left:0;
+  top:0;
+  background:linear-gradient(transparent 100px, white);
+}

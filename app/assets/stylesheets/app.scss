@@ -1,3 +1,25 @@
 html {
-  font-family: 'Josefin Sans', sans-serif;
+  /*font-family: 'Josefin Sans', sans-serif;*/
+  font-family: 'Work Sans', sans-serif;
+}
+
+.login, .signup {
+	background-color: white;
+	padding: 20px 10vw 20px 10vw;
+	margin-top: 50px;
+	border-radius: 4px;
+	-webkit-box-shadow: 18px 17px 42px 1px rgba(0,0,0,1);
+	-moz-box-shadow: 18px 17px 42px 1px rgba(0,0,0,1);
+	box-shadow: 18px 17px 42px 1px rgba(0,0,0,1);
+	.btn {
+		margin: 10px 0 10px 0;
+	}
+}
+
+.nav-wrapper {
+	padding: 0 5vw 0 5vw;
+}
+
+nav {
+	margin-bottom: 40px;
 }

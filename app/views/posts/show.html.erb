@@ -1,2 +1,12 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="card black post-title">
+	    <div class="card-content white-text">
+	    	<div class="valign-wrapper">
+		      <span class="card-title"><%= @post.title %></span>
+	      </div>
+	    </div>
+	  </div>
+		<p><%= simple_format(@post.body) %></p>
+	</div>
+</div>

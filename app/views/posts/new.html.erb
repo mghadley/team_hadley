@@ -1,2 +1,16 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<% if current_user.admin %>
+	<div class="container">
+		<h2>Create a New Post</h2>
+		<%= form_for @post do |f| %>
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+
+			<%= f.label :body %>
+			<%= f.text_area :body, class: 'materialize-textarea' %>
+
+			<%= f.submit class: "btn" %>
+		<% end %>
+	</div>
+<% else %>
+	<h2 class="center">Only admins have access to this feature</h2>
+<% end %>
