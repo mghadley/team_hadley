@@ -1,2 +1,25 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<% if current_user.admin %>
+	<div class="row">
+		<div class="container">
+			<h2>Edit Post</h2>
+			<%= form_for @post do |f| %>
+
+				<div class="">
+					<%= f.label :title %>
+					<%= f.text_field :title, autofocus: true, id: "post_title" %>
+				</div>
+
+				<%= f.hidden_field :body, id: "body-content" %>
+				<%= f.hidden_field :id, value: @post.id, id: "post-id" %>
+				
+				<div class="editor">
+					<textarea id="wysiwyg"></textarea>
+				</div>
+
+				<%= f.submit class: "btn", id: "edit_post_btn" %>
+			<% end %>
+		</div>
+	</div>
+<% else %>
+	<h2 class="center">Only admins have access to this feature</h2>
+<% end %>

@@ -3,6 +3,16 @@ html {
   font-family: 'Work Sans', sans-serif;
 }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 .login, .signup {
 	background-color: white;
 	padding: 20px 10vw 20px 10vw;
@@ -22,4 +32,10 @@ html {
 
 nav {
 	margin-bottom: 40px;
+}
+
+.footer-logo {
+	float: right;
+	height: 80px;
+	margin: 0 20px 0 20px;
 }

@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   	@post = Post.create(post_params)
   	if @post.save
   		flash[:success] = "Post Published"
-  		redirect_to post_path(@post)
+      render json: @post
   	else
   		flash[:danger] = @post.errors.full_messages.join('<br />').html_safe
   		render :new
@@ -27,9 +27,17 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update(post_params)
+      render json: @post
+    else
+      render json: { errors: @post.errors.full_messages.join('<br />').html_safe }
+    end
   end
 
   def destroy
+    @post.destroy
+    flash[:success] = "Post Deleted"
+    render json: true
   end
 
   private

@@ -11,7 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require materialize-sprockets
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
+//= require jquery.wysiwyg

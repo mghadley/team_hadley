@@ -2,11 +2,9 @@
 	<div class="row">
 		<div class="card black post-title">
 	    <div class="card-content white-text">
-	    	<div class="valign-wrapper">
-		      <span class="card-title"><%= @post.title %></span>
-	      </div>
+	      <span class="title"><%= @post.title %></span>
 	    </div>
 	  </div>
-		<p><%= simple_format(@post.body) %></p>
+		<p class="post-body"><%= @post.body.html_safe %></p>
 	</div>
 </div>
