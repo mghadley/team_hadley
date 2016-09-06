@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
-gem 'rails', '4.2.5'
+gem 'rails', '5.0.0'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
 gem 'materialize-sass', '~> 0.97.6'
@@ -34,6 +34,12 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   gem 'spring'
+
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 group :produection do
