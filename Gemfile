@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
-gem 'rails', '5.0.0'
+gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
 gem 'materialize-sass', '~> 0.97.6'
@@ -21,9 +21,8 @@ gem "sprockets-es6"
 gem "react-rails"
 
 group :development, :test do
-  gem 'byebug'
   gem 'pry', '~> 0.10.3'
-  gem 'rspec-rails', '~> 3.4.2'
+  gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1.1'
   gem 'database_cleaner', '~> 1.5.3'
   gem 'simplecov', '~> 0.11.2'
