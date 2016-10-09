@@ -1,3 +1,9 @@
 // Place all the styles related to the Homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.home-show-img {
+	border-radius: 5px;
+	-webkit-box-shadow: 4px 6px 55px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 6px 55px -5px rgba(0,0,0,0.75);
+	box-shadow: 4px 6px 55px -5px rgba(0,0,0,0.75);
+}
