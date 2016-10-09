@@ -5,7 +5,8 @@
 		<% end %>
 		<% if @homes.any? %>
 			<% @homes.each do |home| %>
-				<h4><% home.line_1 %></h4>
+				<h4><%= home.line_1 %></h4>
+				<%= cl_image_tag(home.cover_photo, width: 90, height: 130, crop: :fill) %>
 			<% end %>
 		<% else %>
 			<h3>There are currently no featured homes</h3>

@@ -14,6 +14,7 @@ class HomesController < ApplicationController
 
   def create
   	@home = Home.create(home_params)
+  	@home.cover_photo = @home.upload_image(params[:home][:cover_photo])
   	if @home.save
   		flash[:success] = "Home created successfully"
   		redirect_to home_path(@home)

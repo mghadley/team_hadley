@@ -41,5 +41,16 @@
 		<%= f.text_area :description, class: "materialize-textarea" %>
 		<%= f.label :description %>
 	</div>
-	<%= f.submit class: "btn btn-primary" %>
+	<div class="file-field input-field">
+		<div class="btn">
+		<span>Choose File</span>
+			<%= f.file_field :cover_photo %>
+		</div>
+		<div class="file-path-wrapper">
+			<input class="file-path validate" type="text">
+	  </div>
+	</div>
+	<div>
+		<%= f.submit class: "btn btn-primary" %>
+	</div>
 <% end %>

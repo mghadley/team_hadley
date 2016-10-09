@@ -13,4 +13,5 @@
 /tmp
 /coverage
 config/secrets.yml
+config/cloudinary.yml
 /public/assets

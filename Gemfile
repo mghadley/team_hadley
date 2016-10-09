@@ -20,6 +20,8 @@ gem "sprockets-es6"
 
 gem "react-rails"
 
+gem "cloudinary"
+
 group :development, :test do
   gem 'pry', '~> 0.10.3'
   gem 'rspec-rails'
