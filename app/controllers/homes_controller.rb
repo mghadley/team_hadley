@@ -27,9 +27,20 @@ class HomesController < ApplicationController
   end
 
   def update
+  	# TODO update to handle changing cover photo
+  	if @home.update(home_params)
+  		flash[:success] = "Home updated successfully"
+  		redirect_to home_path(@home)
+  	else
+  		flash[:danger] = @home.errors.full_messages.join('<br>').html_safe
+  		render :edit
+  	end
   end
 
   def destroy
+  	@home.delete
+  	redirect_to homes_path
+  	flash[:success] = "Home deleted"
   end
 
   private

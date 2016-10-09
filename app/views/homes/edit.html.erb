@@ -1,2 +1,10 @@
-<h1>Homes#edit</h1>
-<p>Find me in app/views/homes/edit.html.erb</p>
+<div class="row">
+	<% if current_user.admin %>
+		<h3 class="center">Edit this home</h3>
+		<div class="col s8 m6 offset-s2 offset-m3">
+			<%= render 'form' %>
+		</div>
+	<% else %>
+		<h2 class="center">Only admins have access to this feature</h2>
+	<% end %>
+</div>
