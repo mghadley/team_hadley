@@ -2,7 +2,7 @@ class Home < ActiveRecord::Base
 
 	def upload_image(image)
 	  response = Cloudinary::Uploader.upload(image.path)
-	  binding.pry
+	  puts **********************, response
 		return response['public_id']
 	end
 end
