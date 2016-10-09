@@ -4,6 +4,7 @@ class Post extends React.Component {
 		this.state = { hidden: false }
 		this.displayDate = this.displayDate.bind(this)
 		this.displayHr = this.displayHr.bind(this)
+		this.displayControls = this.displayControls.bind(this)
 	}
 
 	displayDate() {
@@ -32,6 +33,12 @@ class Post extends React.Component {
 		})
 	}
 
+	displayControls() {
+		if (this.props.admin) {
+			return( <PostControls id={this.props.post.id} deletePost={this.deletePost.bind(this)}/> )
+		}
+	}
+
 	render() {
 		if(this.state.hidden) {
 			return(<div></div>)
@@ -41,7 +48,7 @@ class Post extends React.Component {
 					<a href={`/posts/${this.props.post.id}`}><h3>{this.props.post.title}</h3></a>
 					<i>{this.displayDate()}</i>
 					<div dangerouslySetInnerHTML={ { __html: this.props.post.body } } className="preview" />
-					<PostControls id={this.props.post.id} deletePost={this.deletePost.bind(this)}/>
+					{this.displayControls()}
 					{this.displayHr()}
 				</div>
 			)

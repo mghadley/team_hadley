@@ -13,6 +13,10 @@ main {
   flex: 1 0 auto;
 }
 
+.home {
+	background: url(kitchen.jpg) no-repeat center center fixed;
+}
+
 .login, .signup {
 	background-color: white;
 	padding: 20px 10vw 20px 10vw;

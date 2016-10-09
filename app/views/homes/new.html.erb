@@ -1,0 +1,10 @@
+<div class="row">
+	<% if current_user.admin %>
+		<h3 class="center">Create a new home</h3>
+		<div class="col s8 m6 offset-s2 offset-m3">
+			<%= render 'form' %>
+		</div>
+	<% else %>
+		<h2 class="center">Only admins have access to this feature</h2>
+	<% end %>
+</div>

@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="container">
+		<% if current_user.admin %>
+			<%= link_to "Add a new home", new_home_path %>
+		<% end %>
+		<% if @homes.any? %>
+			<% @homes.each do |home| %>
+				<h4><% home.line_1 %></h4>
+			<% end %>
+		<% else %>
+			<h3>There are currently no featured homes</h3>
+		<% end %>
+	</div>
+</div>

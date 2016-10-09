@@ -2,5 +2,5 @@
 	<% if current_user && current_user.admin %>
 		<%= link_to "New blog post", new_post_path %>
 	<% end %>
-	<%= react_component 'Posts', { posts: @posts, admin: admin? } %>
+		<%= react_component 'Posts', { posts: @posts, admin: admin? } %>
 </div>
