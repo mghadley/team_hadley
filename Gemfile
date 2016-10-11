@@ -17,10 +17,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "sprockets"
 gem "sprockets-es6"
-
 gem "react-rails"
-
 gem "cloudinary"
+gem "jquery-slick-rails"
 
 group :development, :test do
   gem 'pry', '~> 0.10.3'

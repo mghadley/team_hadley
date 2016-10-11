@@ -14,7 +14,10 @@ class HomesController < ApplicationController
 
   def create
   	@home = Home.create(home_params)
-  	@home.cover_photo = @home.upload_image(params[:home][:cover_photo])
+  	@home.cover_photo = Home.upload_image(params[:home][:cover_photo])
+  	if params[:home][:photos]
+	  	@home.photos = Home.upload_images(params[:home][:photos])
+  	end
   	if @home.save
   		flash[:success] = "Home created successfully"
   		redirect_to home_path(@home)
@@ -27,7 +30,9 @@ class HomesController < ApplicationController
   end
 
   def update
-  	# TODO update to handle changing cover photo
+  	if params[:home][:cover_photo]
+  		@home.cover_photo = @home.upload_image(params[:home][:cover_photo])
+  	end
   	if @home.update(home_params)
   		flash[:success] = "Home updated successfully"
   		redirect_to home_path(@home)

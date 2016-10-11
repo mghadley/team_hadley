@@ -51,6 +51,16 @@
 			<input class="file-path validate" type="text">
 	  </div>
 	</div>
+	<h5 class="center">Other Photos</h5>
+	<div class="file-field input-field">
+    <div class="btn">
+      <span>Choose File(s)</span>
+      <%= f.file_field :photos, multiple: true %> 
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text" placeholder="Upload one or more files">
+    </div>
+  </div>
 	<div>
 		<%= f.submit class: "btn btn-primary" %>
 	</div>

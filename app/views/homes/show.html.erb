@@ -13,5 +13,12 @@
     	<% end %>
     	<li><%= @home.city %>, <%= @home.state %> <%= @home.zip_code %></li>
     </ul>
+    <% if @home.photos.any? %>
+    	<div class="scroller">
+	    	<% @home.photos.each do |photo| %>
+				  <div style="margin-right: 20px;"><%= cl_image_tag(photo, height: 200) %></div>
+			  <% end %>
+			</div>
+    <% end %>
 	</div>
 </div>

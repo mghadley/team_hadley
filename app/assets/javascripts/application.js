@@ -20,3 +20,4 @@
 //= require components
 //= require_tree .
 //= require jquery.wysiwyg
+//= require jquery.slick
