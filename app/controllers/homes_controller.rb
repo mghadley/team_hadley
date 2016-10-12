@@ -2,7 +2,7 @@ class HomesController < ApplicationController
 	before_action :set_home, except: [:index, :new, :create]
 
   def index
-  	@homes = Home.all
+  	@homes = Home.masonry
   end
 
   def show
@@ -14,15 +14,17 @@ class HomesController < ApplicationController
 
   def create
   	@home = Home.create(home_params)
-  	@home.cover_photo = Home.upload_image(params[:home][:cover_photo])
-  	if params[:home][:photos]
-	  	@home.photos = Home.upload_images(params[:home][:photos])
-  	end
   	if @home.save
+	  	@home.cover_photo = Home.upload_image(params[:home][:cover_photo])
+	  	if params[:home][:photos]
+		  	@home.photos = Home.upload_images(params[:home][:photos])
+	  	end
+	  	@home.save
   		flash[:success] = "Home created successfully"
   		redirect_to home_path(@home)
   	else
-  		flash[:danger] = @home.errors.full_messages.join('<br>').html_safe
+  		flash.now[:danger] = @home.errors.full_messages.join('<br>').html_safe
+  		render :new
   	end
   end
 

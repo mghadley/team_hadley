@@ -5,9 +5,9 @@
 			<%= link_to "Add a new home", new_home_path, class: "btn" %>
 		</div>
 		<% end %>
-		<% if @homes.any? %>
-			<% @homes.each do |home| %>
-				<div class="col l6 m12">
+		<% if @homes[0].any? %>
+			<div class="col l6 m12">
+				<% @homes[0].each do |home| %>
           <div class="card">
             <div class="card-image">
 							<%= cl_image_tag(home.cover_photo) %>
@@ -30,8 +30,36 @@
 	            <% end %>
             </div>
           </div>
-        </div>
-			<% end %>
+				<% end %>
+      </div>
+      <% if @homes[1].any? %>
+				<div class="col l6 m12">
+					<% @homes[1].each do |home| %>
+	          <div class="card">
+	            <div class="card-image">
+								<%= cl_image_tag(home.cover_photo) %>
+	              <span class="card-title"><%= number_to_currency(home.price, precision: 0) %><span>
+	            </div>
+	            <div class="card-content">
+	              <p><%= home.description %></p>
+	              <ul>
+	              	<li>Square Feet: <%= home.sqft %></li>
+	              	<li>Bedrooms: <%= home.bedrooms %></li>
+	              	<li>Bathrooms: <%= home.bathrooms %></li>
+	              	<li><%= home.city %>, <%= home.state %></li>
+	              </ul>
+	            </div>
+	            <div class="card-action">
+	            	<%= link_to "View Home", home_path(home) %>
+		            <% if current_user.admin %>
+			            <%= link_to "Delete", home_path(home), method: :delete %>
+			            <%= link_to "Edit", edit_home_path(home) %>
+		            <% end %>
+	            </div>
+	          </div>
+					<% end %>
+	      </div>
+      <% end %>
 		<% else %>
 			<h3>There are currently no featured homes</h3>
 		<% end %>
