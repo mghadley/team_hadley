@@ -29,7 +29,6 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.5.3'
   gem 'simplecov', '~> 0.11.2'
   gem 'factory_girl_rails', '~> 4.7.0'
-  gem 'capistrano-sidekiq'
 end
 
 group :development do
@@ -37,8 +36,9 @@ group :development do
 
   gem 'spring'
 
+  gem 'capistrano-sidekiq'
   gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
+  gem 'rvm-capistrano',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
