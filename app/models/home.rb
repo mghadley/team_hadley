@@ -34,10 +34,10 @@ class Home < ActiveRecord::Base
 		return response['public_id']
 	end
 
-	def self.upload_images(images)
+	def self.upload_images(paths)
 		public_ids = []
-		images.each do |image|
-			response = Cloudinary::Uploader.upload(image.path)
+		paths.each do |path|
+			response = Cloudinary::Uploader.upload(path)
 			public_ids << response['public_id']
 		end
 		return public_ids

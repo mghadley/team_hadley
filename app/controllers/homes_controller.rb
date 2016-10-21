@@ -17,7 +17,8 @@ class HomesController < ApplicationController
   	if @home.save
 	  	@home.cover_photo = Home.upload_image(params[:home][:cover_photo])
 	  	if params[:home][:photos]
-		  	@home.photos = Home.upload_images(params[:home][:photos])
+	  		paths = params[:home][:photos].map { |p| p.path }
+	  		ImageWorker.perform_async(@home.id, paths)
 	  	end
 	  	@home.save
   		flash[:success] = "Home created successfully"

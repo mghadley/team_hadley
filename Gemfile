@@ -20,6 +20,7 @@ gem "sprockets-es6"
 gem "react-rails"
 gem "cloudinary"
 gem "jquery-slick-rails"
+gem "sidekiq"
 
 group :development, :test do
   gem 'pry', '~> 0.10.3'
@@ -28,6 +29,7 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.5.3'
   gem 'simplecov', '~> 0.11.2'
   gem 'factory_girl_rails', '~> 4.7.0'
+  gem 'capistrano-sidekiq'
 end
 
 group :development do
