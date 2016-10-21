@@ -36,7 +36,7 @@ group :development do
 
   gem 'spring'
 
-  gem 'capistrano-sidekiq'
+  gem 'capistrano-sidekiq', require: false
   gem 'capistrano',         require: false
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
