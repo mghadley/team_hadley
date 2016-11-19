@@ -38,7 +38,7 @@
 // 	});
 // })
 
-$(document).ready( function() {
+$(document).on('turbolinks:load', function() {
 	$('.scroller').slick({
 	  dots: true,
 	  infinite: true,

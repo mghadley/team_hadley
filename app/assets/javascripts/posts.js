@@ -1,4 +1,4 @@
-$(document).ready( function() {
+$(document).on('turbolinks:load', function() {
 	Materialize.updateTextFields();
 	$('#wysiwyg').wysiwyg({
     controls: {

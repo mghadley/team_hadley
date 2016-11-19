@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
 	before_action :set_home, except: [:index, :new, :create]
+  before_action :authenticate_user!, only: [:index]
 
   def index
   	@homes = Home.masonry

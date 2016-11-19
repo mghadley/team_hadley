@@ -16,3 +16,4 @@ config/secrets.yml
 config/cloudinary_secret.yml
 config/devise.yml
 /public/assets
+/dump.rdb
