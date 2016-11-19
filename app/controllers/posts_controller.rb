@@ -36,7 +36,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:success] = "Post Deleted"
     render json: true
   end
 
