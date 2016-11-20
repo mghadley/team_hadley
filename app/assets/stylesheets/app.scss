@@ -51,8 +51,13 @@ nav {
   border-radius: 10px;
   text-align: center;
   line-height: 50px;
+  font-size: 25px;
 }
 
 .alert-success {
   background-color: rgba(89, 224, 62, 0.5)
+}
+
+.alert-danger {
+  background-color: rgba(247, 59, 59, 0.5)
 }

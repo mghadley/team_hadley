@@ -5,6 +5,7 @@
 	      <span class="title"><%= @post.title %></span>
 	    </div>
 	  </div>
-		<p class="post-body"><%= @post.body.html_safe %></p>
+		<div class="post-body"><%= @post.body.html_safe %></div>
 	</div>
+  <%= link_to "back", posts_path, class: "btn" %>
 </div>

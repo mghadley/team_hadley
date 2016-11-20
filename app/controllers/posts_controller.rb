@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   		flash[:success] = "Post Published"
       render json: @post
   	else
-  		flash[:danger] = @post.errors.full_messages.join('<br />').html_safe
+  		flash.now[:danger] = @post.errors.full_messages.join('<br />').html_safe
   		render :new
   	end
   end
