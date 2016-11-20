@@ -13,8 +13,8 @@ class Posts extends React.Component {
 	displayPosts() {
 		return this.props.posts.map( post => {
 			return(
-				<div>
-					<Post key={`post-${post.id}`} post={post} admin={this.props.admin} last={this.isLast(post)}/>
+				<div key={`post-${post.id}`}>
+					<Post post={post} admin={this.props.admin} last={this.isLast(post)}/>
 				</div>
 			)
 		})

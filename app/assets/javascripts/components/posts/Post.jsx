@@ -8,10 +8,11 @@ class Post extends React.Component {
 	}
 
 	displayDate() {
+		let months = [0, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 		let date = this.props.post.created_at
 		let year = /^.{4}/g.exec(date)[0]
-		let month = /-.{2}/g.exec(date)[0]
-		let day = /-.{2}/g.exec(date)[1]
+		let month = months[parseInt(/-(.{2})-/g.exec(date)[1])]
+		let day = /.{2}/g.exec(date)[0]
 		return(<i>{`${month} ${day}, ${year}`}</i>)
 	}
 
