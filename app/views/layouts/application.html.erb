@@ -9,33 +9,33 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="<%= @body_class %>">
-	<nav>
-    <div class="nav-wrapper">
-      <div class="nav-container">
-        <a href="/" class="brand-logo">Greg Hadley</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/homes">Featured Homes</a></li>
-          <li><a href="#">Search for Homes</a></li>
-          <li><a href="/posts">Blog</a></li>
-          <% if current_user %>
-            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><a href="/users/sign_in">Log In</a></li>
-          <% end %>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="/homes">Featured Homes</a></li>
-          <li><a href="#">Search for Homes</a></li>
-          <li><a href="/posts">Blog</a></li>
-          <% if current_user %>
-            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><a href="/users/sign_in">Log In</a></li>
-          <% end %>
-        </ul>
+	<nav class="navbar navbar-default">
+    <div class="container-fluid container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Greg Hadley</a>
       </div>
-    </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/homes">Featured Homes</a></li>
+          <li><a href="#">Homes Search</a></li>
+          <li><a href="/posts">Blog</a></li>
+          <% if current_user %>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><a href="/users/sign_in">Log In</a></li>
+            <li><a href="/users/sign_up">Sign Up</a></li>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
   </nav>
 
   <% flash.each do |key, value| %>
@@ -46,11 +46,11 @@
   	<%= yield %>
   </main>
 
-  <footer class="page-footer">
-    <div>
-      <div class="row">
+  <footer class="navbar navbar-default">
+    <div class="row">
+      <div class="container">
         <div class="col s12">
-          <img class="footer-logo" src="http://res.cloudinary.com/dl5x2wgdv/image/upload/v1471241600/roglogo_qrb0d3.png" alt="Realty One Group Logo"/>
+          <img class="footer-logo-last" src="http://res.cloudinary.com/dl5x2wgdv/image/upload/v1471241600/roglogo_qrb0d3.png" alt="Realty One Group Logo"/>
           <img class="footer-logo" src="http://res.cloudinary.com/dl5x2wgdv/image/upload/v1471241871/eqhousing_zwqmdm.gif" alt="Equal Housing Logo">
           <img class="footer-logo" src="http://res.cloudinary.com/dl5x2wgdv/image/upload/v1471242142/Realtor_MLS_j0qvoe.gif" alt="MLS Logo">
         </div>

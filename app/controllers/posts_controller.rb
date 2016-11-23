@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   	@post = Post.create(post_params)
   	if @post.save
   		flash[:success] = "Post Published"
-      render json: @post
+      redirect_to post_path(@post)
   	else
   		flash.now[:danger] = @post.errors.full_messages.join('<br />').html_safe
   		render :new

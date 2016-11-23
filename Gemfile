@@ -4,7 +4,6 @@ ruby '2.2.3'
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0' 
-gem 'materialize-sass', '~> 0.97.6'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 
@@ -22,6 +21,8 @@ gem "react-rails"
 gem "cloudinary"
 gem "jquery-slick-rails"
 gem "sidekiq"
+gem 'summernote-rails'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'pry', '~> 0.10.3'
