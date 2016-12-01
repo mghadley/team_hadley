@@ -1,7 +1,7 @@
 class Home < ActiveRecord::Base
 	validates_presence_of :line_1
 
-	def self.pool? 
+	def pool? 
 		pool ? "Yes" : "No"
 	end
 
