@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require summernote
-//= require materialize-sprockets
 //= require turbolinks
 //= require react
 //= require react_ujs

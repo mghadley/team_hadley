@@ -1,65 +1,61 @@
 <%= form_for @home do |f| %>
-	<h5 class="center">Address</h5>
-	<div class="input-field">
-		<%= f.text_field :line_1 %>
+	<h3 class="text-center">Address</h3>
+	<div class="form-group">
 		<%= f.label :line_1 %>
+		<%= f.text_field :line_1, class: "form-control" %>
 	</div>
-	<div class="input-field">
-		<%= f.text_field :line_2 %>
+	<div class="form-group">
 		<%= f.label :line_2 %>
+		<%= f.text_field :line_2, class: "form-control" %>
 	</div>
-	<div class="input-field">
-		<%= f.text_field :city %>
+	<div class="form-group">
 		<%= f.label :city %>
+		<%= f.text_field :city, class: "form-control" %>
 	</div>
-	<div class="input-field">
-		<%= f.text_field :state %>
+	<div class="form-group">
 		<%= f.label :state %>
+		<%= f.text_field :state, class: "form-control" %>
 	</div>
-	<div class="input-field">
-		<%= f.text_field :zip_code %>
+	<div class="form-group">
 		<%= f.label :zip_code %>
+		<%= f.text_field :zip_code, class: "form-control" %>
 	</div>
-	<h5 class="center">Info</h5>
-	<div class="input-field">
-		<%= f.number_field :price %>
+	<h3 class="text-center">Info</h3>
+	<div class="form-group">
 		<%= f.label :price %>
+		<%= f.number_field :price, class: "form-control" %>
 	</div>
-	<div class="input-field">
-		<%= f.text_field :sqft %>
+	<div class="form-group">
 		<%= f.label :sqft %>
+		<%= f.text_field :sqft, class: "form-control" %>
 	</div>
-	<div class="input-field">
-		<%= f.number_field :bedrooms %>
+	<div class="form-group">
 		<%= f.label :bedrooms %>
+		<%= f.number_field :bedrooms, class: "form-control" %>
 	</div>
-	<div class="input-field">
-		<%= f.text_field :bathrooms %>
+	<div class="form-group">
 		<%= f.label :bathrooms %>
+		<%= f.text_field :bathrooms, class: "form-control" %>
 	</div>
-	<div class="input-field">
-		<%= f.text_area :description, class: "materialize-textarea" %>
+	<div class="form-check">
+		<label class="form-check-label">
+			<%= f.check_box :pool, class: "form-check-input" %>
+	    Pool?
+	  </label>
+	</div>
+	<div class="form-group">
 		<%= f.label :description %>
+		<%= f.text_area :description, class: "form-control" %>
 	</div>
-	<h5 class="center">Cover Photo</h5>
-	<div class="file-field input-field">
-		<div class="btn">
-		<span>Choose File</span>
-			<%= f.file_field :cover_photo %>
-		</div>
-		<div class="file-path-wrapper">
-			<input class="file-path validate" type="text">
-	  </div>
+	<h3 class="text-center">Cover Photo</h3>
+	<div class="form-group">
+		<%= f.file_field :cover_photo, class: "form-control-file", "aria-describedby" => "fileHelp" %>
+		<span class='label label-info' id="upload-file-info"></span>
 	</div>
-	<h5 class="center">Other Photos</h5>
-	<div class="file-field input-field">
-    <div class="btn">
-      <span>Choose File(s)</span>
-      <%= f.file_field :photos, multiple: true %> 
-    </div>
-    <div class="file-path-wrapper">
-      <input class="file-path validate" type="text" placeholder="Upload one or more files">
-    </div>
+	<h3 class="text-center">Other Photos</h3>
+  <div class="form-group">
+    <%= f.file_field :photos, class: "form-control-file", multiple: true %> 
+    <span class="custom-file-control"></span>
   </div>
 	<div class="center med-top-margin">
 		<%= f.submit class: "btn btn-primary" %>

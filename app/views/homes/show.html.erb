@@ -1,24 +1,36 @@
-<div class="row">
-	<div class="container">
-		<%= cl_image_tag(@home.cover_photo, height: 600, class: "home-show-img") %>
-		<p><%= @home.description %></p>
-    <ul>
-    	<li>Square Feet: <%= @home.sqft %></li>
-    	<li>Bedrooms: <%= @home.bedrooms %></li>
-    	<li>Bathrooms: <%= @home.bathrooms %></li>
-    	<br>
-    	<li><%= @home.line_1 %></li>
-    	<% if @home.line_2 %>
-	    	<li><%= @home.line_2 %></li>
-    	<% end %>
-    	<li><%= @home.city %>, <%= @home.state %> <%= @home.zip_code %></li>
-    </ul>
-    <% if @home.photos.any? %>
-    	<div class="scroller">
-	    	<% @home.photos.each do |photo| %>
-				  <div style="margin-right: 20px;"><%= cl_image_tag(photo, height: 200) %></div>
-			  <% end %>
-			</div>
-    <% end %>
-	</div>
+<div class="container">
+  <div class="col-lg-6 col-lg-offset-1">
+    <%= cl_image_tag(@home.cover_photo, height: 600, class: "home-show-img") %>
+  </div>
+  <div class="col-lg-5 col-xs-5">
+    <div class="home-deets">
+      <ul class="list-unstyled">
+        <li>Square Feet: <%= @home.sqft %></li>
+        <li>Bedrooms: <%= @home.bedrooms %></li>
+        <li>Bathrooms: <%= @home.bathrooms %></li>
+        <li>Pool: <%= @home.pool? %></li>
+        <br>
+        <li><%= @home.line_1 %></li>
+        <% if @home.line_2 %>
+          <li><%= @home.line_2 %></li>
+        <% end %>
+        <li><%= @home.city %>, <%= @home.state %> <%= @home.zip_code %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-10 col-lg-offset-1 col-xs-7">
+    <p class="home-desc"><%= @home.description %></p>
+  </div>
+  <br>
 </div>
+<% if @home.photos.any? %>
+  <div class="col-xs-12 no-padding grey-sunken-box">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="scroller">
+        <% @home.photos.each do |photo| %>
+          <div style="margin-right: 20px;"><%= cl_image_tag(photo, height: 200) %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

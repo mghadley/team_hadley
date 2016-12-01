@@ -1,6 +1,10 @@
 class Home < ActiveRecord::Base
 	validates_presence_of :line_1
 
+	def self.pool? 
+		pool ? "Yes" : "No"
+	end
+
 	def self.masonry
 		homes = [[],[]]
 		all.each_with_index do |home, i|

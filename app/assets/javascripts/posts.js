@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function() {
 	$('#summernote').summernote();
 
 	$('[data-provider="summernote"]').each(function(){
-	  $(this).summernote({ });
+	  $(this).summernote({height: 400});
 	})
 
 	// $('#post_btn').click( function(e) {

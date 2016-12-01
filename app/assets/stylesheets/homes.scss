@@ -9,3 +9,52 @@
 	display: block;
 	margin: 0 auto;
 }
+
+.home-card {
+  width: 400px;
+  margin: 10px auto;
+  background-color: #efefef;
+  -webkit-box-shadow: 3px 4px 23px -1px rgba(196,196,196,1);
+  -moz-box-shadow: 3px 4px 23px -1px rgba(196,196,196,1);
+  box-shadow: 3px 4px 23px -1px rgba(196,196,196,1);
+  .card-img {
+    width: 100%;
+  }
+}
+
+.home-card-block {
+  padding: 30px;
+  li {
+    font-size: 18px;
+  }
+}
+
+.home-card-nav {
+  border-top: 1px solid #c9c9c9;
+  padding: 30px;
+  a {
+    margin-right: 15px;
+    font-size: 20px;
+  }
+}
+
+.home-show-img {
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+}
+
+.home-deets {
+  font-size: 30px;
+  width: 300px;
+  margin: 70px auto 40px auto;
+}
+
+.home-desc {
+  margin: 70px 0;
+  font-size: 16px;
+}
+
+.scroller {
+  width: 100%;
+}

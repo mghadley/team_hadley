@@ -1,11 +1,7 @@
 <div class="container">
 	<div class="row">
-		<div class="card black post-title">
-	    <div class="card-content white-text">
-	      <span class="title"><%= @post.title %></span>
-	    </div>
-	  </div>
+    <h2 class="text-center"><%= @post.title %></h2>
 		<div class="post-body"><%= @post.body.html_safe %></div>
 	</div>
-  <%= link_to "back", posts_path, class: "btn" %>
+  <%= link_to "back", posts_path, class: "btn btn-primary" %>
 </div>

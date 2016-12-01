@@ -28,9 +28,11 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      render json: @post
+      flash[:success] = "Post Updated"
+      redirect_to post_path(@post)
     else
-      render json: { errors: @post.errors.full_messages.join('<br />').html_safe }
+      flash.now[:danger] = @post.errors.full_messages.join('<br />').html_safe
+      render :edit
     end
   end
 

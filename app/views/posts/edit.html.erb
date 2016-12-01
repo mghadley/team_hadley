@@ -12,11 +12,11 @@
 				<%= f.hidden_field :body, id: "body-content" %>
 				<%= f.hidden_field :id, value: @post.id, id: "post-id" %>
 				
-				<div class="editor">
-					<textarea id="wysiwyg"></textarea>
+				<div class="form-group">
+					<%= f.text_area :body, "data-provider"=> "summernote", class: "form-control" %>
 				</div>
 
-				<%= f.submit class: "btn", id: "edit_post_btn" %>
+				<%= f.submit class: "btn btn-primary", id: "edit_post_btn" %>
 			<% end %>
 		</div>
 	</div>

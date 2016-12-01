@@ -1,67 +1,59 @@
-<div class="row">
-	<div class="container">
-		<% if current_user.admin %>
-		<div>
-			<%= link_to "Add a new home", new_home_path, class: "btn" %>
-		</div>
-		<% end %>
-		<% if @homes[0].any? %>
-			<div class="col l6 m12">
-				<% @homes[0].each do |home| %>
-          <div class="card">
-            <div class="card-image">
-							<%= cl_image_tag(home.cover_photo) %>
-              <span class="card-title"><%= number_to_currency(home.price, precision: 0) %><span>
-            </div>
-            <div class="card-content">
-              <p><%= home.description %></p>
-              <ul>
-              	<li>Square Feet: <%= home.sqft %></li>
-              	<li>Bedrooms: <%= home.bedrooms %></li>
-              	<li>Bathrooms: <%= home.bathrooms %></li>
-              	<li><%= home.city %>, <%= home.state %></li>
+<div class="container">
+  <% if current_user.admin %>
+    <div>
+      <%= link_to "Add a new home", new_home_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  <% if @homes[0].any? %>
+    <div class="col-lg-6">
+      <% @homes[0].each do |home| %>
+        <div class="home-card">
+          <%= cl_image_tag(home.cover_photo, class: "card-img") %>
+          <div class="home-card-block">
+            <p class="card-text"><%= home.description %></p>
+            <ul class="list-unstyled">
+              <li>Square Feet: <%= home.sqft %></li>
+              <li>Bedrooms: <%= home.bedrooms %></li>
+              <li>Bathrooms: <%= home.bathrooms %></li>
+              <li><%= home.city %>, <%= home.state %></li>
+            </ul>
+          </div>
+          <div class="home-card-nav">
+            <%= link_to "View Home", home_path(home) %>
+              <% if current_user.admin %>
+                <%= link_to "Delete", home_path(home), method: :delete %>
+                <%= link_to "Edit", edit_home_path(home) %>
+              <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <% if @homes[1].any? %>
+      <div class="col-lg-6">
+        <% @homes[1].each do |home| %>
+          <div class="home-card">
+            <%= cl_image_tag(home.cover_photo, class: "card-img") %>
+            <div class="home-card-block">
+              <p class="card-text"><%= home.description %></p>
+              <ul class="list-unstyled">
+                <li>Square Feet: <%= home.sqft %></li>
+                <li>Bedrooms: <%= home.bedrooms %></li>
+                <li>Bathrooms: <%= home.bathrooms %></li>
+                <li><%= home.city %>, <%= home.state %></li>
               </ul>
             </div>
-            <div class="card-action">
-            	<%= link_to "View Home", home_path(home) %>
-	            <% if current_user.admin %>
-		            <%= link_to "Delete", home_path(home), method: :delete %>
-		            <%= link_to "Edit", edit_home_path(home) %>
-	            <% end %>
+            <div class="home-card-nav">
+              <%= link_to "View Home", home_path(home) %>
+                <% if current_user.admin %>
+                  <%= link_to "Delete", home_path(home), method: :delete %>
+                  <%= link_to "Edit", edit_home_path(home) %>
+                <% end %>
             </div>
           </div>
-				<% end %>
+        <% end %>
       </div>
-      <% if @homes[1].any? %>
-				<div class="col l6 m12">
-					<% @homes[1].each do |home| %>
-	          <div class="card">
-	            <div class="card-image">
-								<%= cl_image_tag(home.cover_photo) %>
-	              <span class="card-title"><%= number_to_currency(home.price, precision: 0) %><span>
-	            </div>
-	            <div class="card-content">
-	              <p><%= home.description %></p>
-	              <ul>
-	              	<li>Square Feet: <%= home.sqft %></li>
-	              	<li>Bedrooms: <%= home.bedrooms %></li>
-	              	<li>Bathrooms: <%= home.bathrooms %></li>
-	              	<li><%= home.city %>, <%= home.state %></li>
-	              </ul>
-	            </div>
-	            <div class="card-action">
-	            	<%= link_to "View Home", home_path(home) %>
-		            <% if current_user.admin %>
-			            <%= link_to "Delete", home_path(home), method: :delete %>
-			            <%= link_to "Edit", edit_home_path(home) %>
-		            <% end %>
-	            </div>
-	          </div>
-					<% end %>
-	      </div>
-      <% end %>
-		<% else %>
-			<h3>There are currently no featured homes</h3>
-		<% end %>
-	</div>
+    <% end %>
+  <% else %>
+    <h3>There are currently no featured homes</h3>
+  <% end %>
 </div>
