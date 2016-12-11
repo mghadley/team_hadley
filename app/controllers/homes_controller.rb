@@ -47,6 +47,7 @@ class HomesController < ApplicationController
   end
 
   def destroy
+    ImageDeleteWorker.perform_async(@home.all_photos)
     @home.delete
     redirect_to homes_path
     flash[:success] = "Home deleted"

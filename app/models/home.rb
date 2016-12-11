@@ -1,6 +1,8 @@
 class Home < ActiveRecord::Base
 	validates_presence_of :line_1
 
+	before_destroy :delete_images 
+
 	def pool? 
 		pool ? "Yes" : "No"
 	end
@@ -45,5 +47,19 @@ class Home < ActiveRecord::Base
 			public_ids << response['public_id']
 		end
 		return public_ids
+	end
+
+	def all_photos
+		photos << cover_photo
+	end
+
+	def delete_images
+		binding.pry
+		puts "*" * 30, "Deleting images"
+		ImageDeleteWorker.perform_async(cover_photo, photos)
+	end
+
+	def self.delete_image
+
 	end
 end
