@@ -83,4 +83,3 @@ production:
   database: team_hadley_app_production
   username: team_hadley_app
   password: <%= ENV['TEAM_HADLEY_APP_DATABASE_PASSWORD'] %>
-  host: localhost
